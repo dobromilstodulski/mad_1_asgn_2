@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1009177124105",
+    "project_id": "venues-c94e5",
+    "storage_bucket": "venues-c94e5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1009177124105:android:7c59c198d916d0aff387d8",
+        "android_client_info": {
+          "package_name": "org.dobromilstodulski.venues"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1009177124105-tgormv3nclbe9c0hnk1u02r8a2juru1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmH2tl5IUO6drdOIzGGW8MV3LWz6dSglI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1009177124105-tgormv3nclbe9c0hnk1u02r8a2juru1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

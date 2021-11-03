@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/bb100/AndroidStudioProjects/Venues/app/src/main/res/layout/activity_event.xml" value="0.28306159420289856" />
+        <entry key="..\:/Users/bb100/AndroidStudioProjects/Venues/app/src/main/res/layout/activity_login.xml" value="0.28306159420289856" />
         <entry key="..\:/Users/bb100/AndroidStudioProjects/Venues/app/src/main/res/layout/activity_main.xml" value="0.28306159420289856" />
+        <entry key="..\:/Users/bb100/AndroidStudioProjects/Venues/app/src/main/res/layout/fragment_login.xml" value="0.21875" />
+        <entry key="..\:/Users/bb100/AndroidStudioProjects/Venues/app/src/main/res/layout/fragment_main.xml" value="0.28306159420289856" />
+        <entry key="..\:/Users/bb100/AndroidStudioProjects/Venues/app/src/main/res/xml/settings.xml" value="0.21875" />
       </map>
     </option>
   </component>
