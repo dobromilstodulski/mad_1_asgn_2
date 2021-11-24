@@ -102,22 +102,21 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         }
     }
 
-//Not working below in a Fragment but did work in an Activity
-/*
-public override fun onStart() {
-    super.onStart()
-    // Check if user is signed in (non-null) and update UI accordingly.
-    val currentUser = auth.currentUser
-    if(currentUser != null){
-        reload();
+    //Not working below in a Fragment but did work in an Activity
+    //https://stackoverflow.com/questions/44583834/firebase-how-to-check-if-user-is-logged-in
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if(currentUser != null){
+            reload();
+        }
     }
-}
 
-private fun reload() {
-    Toast.makeText(activity, "Sign In Successful", Toast.LENGTH_LONG).show()
-    startActivity(Intent(activity, VenueActivity::class.java))
-}
-*/
+    private fun reload() {
+        Toast.makeText(activity, "Sign In Successful", Toast.LENGTH_LONG).show()
+        startActivity(Intent(activity, VenueActivity::class.java))
+    }
 
     override fun onDestroy() {
         super.onDestroy()
