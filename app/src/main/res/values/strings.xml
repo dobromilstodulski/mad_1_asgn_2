@@ -1,24 +1,17 @@
 <resources>
     <string name="app_name">Venues</string>
-
+    <!-- Hints -->
     <string name="hint_emailAddress">Email Address</string>
     <string name="hint_password">Password</string>
-
+    <string name="hint_eventTitle">Title</string>
+    <string name="hint_eventDescription">Description</string>
+    <string name="hint_eventTicket">Ticket</string>
+    <string name="hint_eventType">Type</string>
+    <string name="hint_eventTime">Time</string>
+    <string name="hint_eventDate">Date</string>
+    <string name="hint_eventOrganiser">Organiser</string>
+    <!-- Buttons  -->
     <string name="button_register">Register</string>
     <string name="button_login">Login</string>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_auth">AuthActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="button_event_add">Add Event</string>
 </resources>

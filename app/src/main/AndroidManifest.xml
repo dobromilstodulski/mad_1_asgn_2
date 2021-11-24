@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.VenueActivity" />
+        <activity android:name=".activities.EventActivity" />
     </application>
 
 </manifest>

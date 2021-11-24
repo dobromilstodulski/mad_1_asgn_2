@@ -1,3 +1,11 @@
 package org.dobromilstodulski.venues.models
 
-data class EventModel (var name: String = "")
+import java.util.*
+
+class EventModel (var title: String = "",
+                       var description: String="",
+                       var ticket: String="",
+                       var type: String="",
+                       var time: String="",
+                       var date: String="",
+                       var organiser: String="",)

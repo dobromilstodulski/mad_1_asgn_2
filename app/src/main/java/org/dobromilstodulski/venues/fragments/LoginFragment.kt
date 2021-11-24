@@ -16,6 +16,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import org.dobromilstodulski.venues.R
 import org.dobromilstodulski.venues.activities.AuthActivity
+import org.dobromilstodulski.venues.activities.EventActivity
 import org.dobromilstodulski.venues.activities.LoginActivity
 import org.dobromilstodulski.venues.activities.VenueActivity
 import org.dobromilstodulski.venues.databinding.ActivityLoginBinding
@@ -96,7 +97,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             Toast.makeText(activity, "Sign In Successful", Toast.LENGTH_LONG).show()
-            startActivity(Intent(activity, VenueActivity::class.java))
+            startActivity(Intent(activity, EventActivity::class.java))
         } else {
             Toast.makeText(requireActivity(), "Sign In Unsuccessful", Toast.LENGTH_LONG).show()
         }
@@ -115,7 +116,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private fun reload() {
         Toast.makeText(activity, "Sign In Successful", Toast.LENGTH_LONG).show()
-        startActivity(Intent(activity, VenueActivity::class.java))
+        startActivity(Intent(activity, EventActivity::class.java))
     }
 
     override fun onDestroy() {

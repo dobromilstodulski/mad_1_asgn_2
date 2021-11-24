@@ -15,10 +15,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import org.dobromilstodulski.venues.R
-import org.dobromilstodulski.venues.activities.AuthActivity
-import org.dobromilstodulski.venues.activities.LoginActivity
-import org.dobromilstodulski.venues.activities.RegisterActivity
-import org.dobromilstodulski.venues.activities.VenueActivity
+import org.dobromilstodulski.venues.activities.*
 import org.dobromilstodulski.venues.databinding.ActivityLoginBinding
 import org.dobromilstodulski.venues.databinding.FragmentLoginBinding
 import org.dobromilstodulski.venues.databinding.FragmentRegisterBinding
@@ -43,7 +40,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             Toast.makeText(activity, "Registration Successful", Toast.LENGTH_LONG).show()
-            startActivity(Intent(activity, VenueActivity::class.java))
+            startActivity(Intent(activity, EventActivity::class.java))
         } else {
             Toast.makeText(activity, "Registration Unsuccessful", Toast.LENGTH_LONG).show()
         }
