@@ -11,6 +11,6 @@ class MainApp : Application() {
     override fun onCreate() {
         super.onCreate()
         Timber.plant(Timber.DebugTree())
-        i("Placemark started")
+        i("Venues started")
     }
 }

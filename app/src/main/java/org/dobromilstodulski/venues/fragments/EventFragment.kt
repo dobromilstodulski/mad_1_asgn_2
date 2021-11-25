@@ -28,8 +28,6 @@ class EventFragment : Fragment(R.layout.fragment_event) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        database = Firebase.database.reference
-
         binding.btnAddEvent.setOnClickListener() {
             var title = binding.eventTitle.text.toString()
             var description = binding.eventDescription.text.toString()
@@ -42,15 +40,20 @@ class EventFragment : Fragment(R.layout.fragment_event) {
                 type.isNotEmpty() && time.isNotEmpty() && date.isNotEmpty() &&
                 organiser.isNotEmpty())
             {
+                database = FirebaseDatabase.getInstance().getReference("events")
                 var model = EventModel(title, description, ticket, type, time, date, organiser)
-                database.child("events").child(id!!.toString()).setValue(model).addOnSuccessListener {
+                database.child(title).setValue(model).addOnSuccessListener {
                     binding.eventTitle.text.clear()
                     binding.eventDescription.text.clear()
                     binding.eventTicket.text.clear()
                     binding.eventTime.text.clear()
                     binding.eventDate.text.clear()
-                }
+                    binding.eventOrganiser.text.clear()
 
+                    Toast.makeText(activity,"Successfully Saved!",Toast.LENGTH_SHORT).show()
+                }.addOnFailureListener {
+                    Toast.makeText(activity,"Failed to Save!",Toast.LENGTH_SHORT).show()
+                }
             }
 
             else {
