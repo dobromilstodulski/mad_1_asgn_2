@@ -3,6 +3,7 @@
     <!-- Hints -->
     <string name="hint_emailAddress">Email Address</string>
     <string name="hint_password">Password</string>
+    <!-- Event -->
     <string name="hint_eventTitle">Title</string>
     <string name="hint_eventDescription">Description</string>
     <string name="hint_eventTicket">Ticket</string>
@@ -10,8 +11,35 @@
     <string name="hint_eventTime">Time</string>
     <string name="hint_eventDate">Date</string>
     <string name="hint_eventOrganiser">Organiser</string>
+    <!-- Venue -->
+    <string name="hint_venueTitle">Title</string>
+    <string name="hint_venueDescription">Description</string>
+    <string name="hint_venueContact">Contact</string>
+    <string name="hint_venueType">Type</string>
+    <string name="hint_venue_rating">Rating</string>
     <!-- Buttons  -->
+    <!-- Venue -->
+    <string name="button_venue_image">Add Venue Image</string>
+    <string name="button_venue_location">Set Location</string>
+    <string name="button_venue_rating">Rating</string>
+    <string name="button_venue_add">Add Venue</string>
+    <string name="change_venue_image">Change Venue Image</string>
+    <!-- -->
     <string name="button_register">Register</string>
     <string name="button_login">Login</string>
     <string name="button_event_add">Add Event</string>
+
+    <!-- Venue Activity -->
+    <string-array name="type">
+        <item>Bar</item>
+        <item>Nightclub</item>
+        <item>Hall</item>
+        <item>Stadium</item>
+        <item>Theatre</item>
+    </string-array>
+
+    <string name="save_venue">Save Venue</string>
+    <string name="enter_all_venue_details">Enter All Venue Details</string>
+
+    <string name="title_activity_map">MapActivity</string>
 </resources>

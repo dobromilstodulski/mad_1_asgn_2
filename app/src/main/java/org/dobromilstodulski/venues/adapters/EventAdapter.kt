@@ -1,18 +1,20 @@
 package org.dobromilstodulski.venues.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.ValueEventListener
 import org.dobromilstodulski.venues.databinding.CardEventBinding
-import org.dobromilstodulski.venues.fragments.EventListFragment
 import org.dobromilstodulski.venues.models.EventModel
 
 interface EventListener {
     fun onEventClick(event: EventModel)
 }
 
-class EventAdapter(private val events: ArrayList<EventModel>, private val listener: EventListener) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
+class EventAdapter(private val events: ArrayList<EventModel>) : RecyclerView.Adapter<EventAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
@@ -32,7 +34,7 @@ class EventAdapter(private val events: ArrayList<EventModel>, private val listen
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val event = events[holder.adapterPosition]
-        holder.bind(event, listener)
+        holder.bind(event)
 
         /*
         val currentItem = eventList[position]
@@ -65,10 +67,14 @@ class EventAdapter(private val events: ArrayList<EventModel>, private val listen
     class ViewHolder(private val binding : CardEventBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(event: EventModel, listener: EventListener) {
+        fun bind(event: EventModel) {
             binding.eventTitle.text = event.title
             binding.eventDescription.text = event.description
-            binding.root.setOnClickListener { listener.onEventClick(event) }
+            binding.eventTicket.text = event.ticket
+            binding.eventType.text = event.type
+            binding.eventTime.text = event.time
+            binding.eventDate.text = event.date
+            binding.eventOrganiser.text = event.organiser
         }
     }
 }
