@@ -52,6 +52,7 @@
 
     <string name="button_events">Events</string>
     <string name="button_venues">Venues</string>
+    <string name="button_eb">Eventbrite Events</string>
 
     <string name="title_activity_map">MapActivity</string>
 </resources>

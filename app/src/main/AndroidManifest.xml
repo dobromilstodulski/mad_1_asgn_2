@@ -9,6 +9,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".main.MainApp"
@@ -46,6 +47,7 @@
         </activity>
         <activity android:name=".activities.MenuActivity" />
         <activity android:name=".activities.EventActivity" />
+        <activity android:name=".activities.EventEventbriteActivity" />
         <activity android:name=".activities.VenueActivity" />
         <activity android:name=".activities.VenueListActivity" />
         <activity android:name=".activities.VenueMapsActivity" />

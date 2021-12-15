@@ -30,5 +30,10 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, VenueListActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnEB.setOnClickListener{
+            val intent = Intent(this, EventEventbriteActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
