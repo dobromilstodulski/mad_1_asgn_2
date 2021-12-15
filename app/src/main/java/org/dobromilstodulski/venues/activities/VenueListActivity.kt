@@ -33,7 +33,7 @@ class VenueListActivity : AppCompatActivity(), VenueListener/*, MultiplePermissi
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerView.layoutManager = layoutManager
 
-        loadPlacemarks()
+        loadVenues()
         registerRefreshCallback()
         registerMapCallback()
     }
@@ -66,7 +66,7 @@ class VenueListActivity : AppCompatActivity(), VenueListener/*, MultiplePermissi
     private fun registerRefreshCallback() {
         refreshIntentLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult())
-            { loadPlacemarks() }
+            { loadVenues() }
     }
 
     private fun registerMapCallback() {
@@ -75,11 +75,11 @@ class VenueListActivity : AppCompatActivity(), VenueListener/*, MultiplePermissi
             {  }
     }
 
-    private fun loadPlacemarks() {
-        showPlacemarks(app.venues.findAll())
+    private fun loadVenues() {
+        showVenues(app.venues.findAll())
     }
 
-    fun showPlacemarks (venues: List<VenueModel>) {
+    fun showVenues (venues: List<VenueModel>) {
         binding.recyclerView.adapter = VenueAdapter(venues, this)
         binding.recyclerView.adapter?.notifyDataSetChanged()
     }

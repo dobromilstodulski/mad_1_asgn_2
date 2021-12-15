@@ -7,9 +7,11 @@ import org.dobromilstodulski.venues.R
 import org.dobromilstodulski.venues.databinding.ActivityAuthBinding
 import org.dobromilstodulski.venues.fragments.LoginFragment
 import org.dobromilstodulski.venues.fragments.RegisterFragment
+import org.dobromilstodulski.venues.main.MainApp
 
 class AuthActivity : AppCompatActivity() {
 
+    lateinit var app: MainApp
     private lateinit var binding: ActivityAuthBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,8 @@ class AuthActivity : AppCompatActivity() {
 
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        app = application as MainApp
 
         val firstFragment= LoginFragment()
         val secondFragment = RegisterFragment()

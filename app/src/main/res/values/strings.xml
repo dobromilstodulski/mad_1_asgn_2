@@ -41,5 +41,17 @@
     <string name="save_venue">Save Venue</string>
     <string name="enter_all_venue_details">Enter All Venue Details</string>
 
+    <string name="menu_addVenue">Add Venue</string>
+
+    <string name="menu_cancelVenue">Cancel Venue</string>
+    <string name="menu_deleteVenue">Delete Venue</string>
+
+    <string name="venue_image_placeholder">Venue Image</string>
+    <string name="venue_name_placeholder">Venue Name</string>
+    <string name="venue_description_placeholder">Venue Description</string>
+
+    <string name="button_events">Events</string>
+    <string name="button_venues">Venues</string>
+
     <string name="title_activity_map">MapActivity</string>
 </resources>

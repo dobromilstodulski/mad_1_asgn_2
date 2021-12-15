@@ -52,7 +52,7 @@
                 android:id="@+id/currentTitle"
                 android:layout_width="175dp"
                 android:layout_height="21dp"
-                android:text="@string/venue_title_placeholder"
+                android:text="@string/venue_name_placeholder"
                 app:layout_constraintBottom_toTopOf="@+id/currentDescription"
                 app:layout_constraintEnd_toStartOf="@+id/currentImage"
                 app:layout_constraintStart_toStartOf="parent"

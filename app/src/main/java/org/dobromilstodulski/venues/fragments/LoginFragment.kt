@@ -15,11 +15,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import org.dobromilstodulski.venues.R
-import org.dobromilstodulski.venues.activities.AuthActivity
-import org.dobromilstodulski.venues.activities.EventActivity
-import org.dobromilstodulski.venues.activities.LoginActivity
-import org.dobromilstodulski.venues.activities.VenueActivity
-import org.dobromilstodulski.venues.databinding.ActivityLoginBinding
+import org.dobromilstodulski.venues.activities.*
 import org.dobromilstodulski.venues.databinding.FragmentLoginBinding
 import timber.log.Timber
 
@@ -116,7 +112,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private fun reload() {
         Toast.makeText(activity, "Sign In Successful", Toast.LENGTH_LONG).show()
-        startActivity(Intent(activity, EventActivity::class.java))
+        startActivity(Intent(activity, MenuActivity::class.java))
     }
 
     override fun onDestroy() {

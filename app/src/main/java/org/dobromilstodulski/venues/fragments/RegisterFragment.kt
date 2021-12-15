@@ -40,7 +40,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             Toast.makeText(activity, "Registration Successful", Toast.LENGTH_LONG).show()
-            startActivity(Intent(activity, EventActivity::class.java))
+            startActivity(Intent(activity, MenuActivity::class.java))
         } else {
             Toast.makeText(activity, "Registration Unsuccessful", Toast.LENGTH_LONG).show()
         }
