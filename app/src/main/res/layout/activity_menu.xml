@@ -79,6 +79,19 @@
                     android:textSize="16sp"
                     tools:layout_editor_absoluteY="536dp" />
 
+                <Button
+                    android:id="@+id/btnSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/button_settings"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp"
+                    tools:layout_editor_absoluteY="536dp" />
+
 
             </LinearLayout>
         </ScrollView>
