@@ -27,7 +27,7 @@ import org.dobromilstodulski.venues.models.VenueModel
 import timber.log.Timber
 import timber.log.Timber.i
 
-class VenueActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class VenueActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityVenueBinding
     var venue = VenueModel()
@@ -36,7 +36,6 @@ class VenueActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     private lateinit var mapIntentLauncher : ActivityResultLauncher<Intent>
     //var location = Location(52.245696, -7.139102, 15f)
     var edit = false
-    lateinit var spinner: Spinner
     private lateinit var database: DatabaseReference
 
 
@@ -52,49 +51,34 @@ class VenueActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         i("Venue Activity started...")
 
-        val adapter = ArrayAdapter.createFromResource(
-            this,
-            R.array.type,
-            android.R.layout.simple_spinner_item
-        )
-
-        spinner = findViewById(R.id.venueRating)
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner.adapter = adapter
-        spinner.onItemSelectedListener = this
-
-        /*
-        if (intent.hasExtra("venue_edit")) {
-            edit = true
-            venue = intent.extras?.getParcelable("venue_edit")!!
-            var title = binding.venueTitle.setText(venue.name)
-            var description = binding.venueDescription.setText(venue.description)
-            var contact = binding.venueContact.setText(venue.contact)
-            var type = binding.venueType.toString()
-            var rating = binding.venueRating.rating
-            binding.btnAddVenue.setText(R.string.save_placemark)
-            Picasso.get()
-                .load(venue.image)
-                .into(binding.venueImage)
-            if (venue.image != Uri.EMPTY) {
-                binding.btnAddImage.setText(R.string.change_venue_image)
-            }
-        }
+         if (intent.hasExtra("venue_edit")) {
+             edit = true
+             venue = intent.extras?.getParcelable("venue_edit")!!
+             binding.venueTitle.setText(venue.name)
+             binding.venueDescription.setText(venue.description)
+             binding.venueContact.setText(venue.contact)
+             binding.btnAddVenue.setText(R.string.save_venue)
+             Picasso.get()
+                 .load(venue.image)
+                 .into(binding.venueImage)
+             if (venue.image != Uri.EMPTY) {
+                 binding.btnAddImage.setText(R.string.change_venue_image)
+             }
+         }
 
         binding.btnAddVenue.setOnClickListener() {
-            var title = binding.venueTitle.text.toString()
-            var description = binding.venueDescription.text.toString()
-            var contact = binding.venueContact.text.toString()
-            var type = binding.venueType.toString()
-            var rating = binding.venueRating.rating.toString()
-            if (title.isEmpty() && description.isEmpty() && contact.isEmpty() &&
-                type.isEmpty() && rating.isEmpty()) {
-                Snackbar.make(it,R.string.enter_placemark_title, Snackbar.LENGTH_LONG)
+            venue.name = binding.venueTitle.text.toString()
+            venue.description = binding.venueDescription.text.toString()
+            venue.contact = binding.venueContact.text.toString()
+            venue.type = binding.venueType.toString()
+            venue.rating = binding.venueRating.rating.toDouble()
+            if (venue.name.isEmpty() && venue.description.isEmpty() && venue.contact.isEmpty() &&
+                venue.type.isEmpty() && venue.rating.isNaN()) {
+                Snackbar.make(it,R.string.enter_all_venue_details, Snackbar.LENGTH_LONG)
                     .show()
             } else {
                 if (edit) {
-
+                    app.venues.update(venue.copy())
                 } else {
                     app.venues.create(venue.copy())
                 }
@@ -103,7 +87,6 @@ class VenueActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
             setResult(RESULT_OK)
             finish()
         }
-        */
 
         binding.btnAddImage.setOnClickListener {
             showImagePicker(imageIntentLauncher)
@@ -123,6 +106,21 @@ class VenueActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
 
         registerImagePickerCallback()
         registerMapCallback()
+
+        binding.venueType.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Toast.makeText(this@VenueActivity, "You Selected: ${parent?.getItemAtPosition(position).toString()}", Toast.LENGTH_LONG).show()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -134,7 +132,7 @@ class VenueActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.item_delete -> {
-                finish()
+
             }
             R.id.item_cancel -> {
                 finish()
@@ -181,51 +179,5 @@ class VenueActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     RESULT_CANCELED -> { } else -> { }
                 }
             }
-    }
-
-    override fun onNothingSelected(parent: AdapterView<*>?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        val text: String = parent?.getItemAtPosition(position).toString()
-        if (intent.hasExtra("venue_edit")) {
-            edit = true
-            venue = intent.extras?.getParcelable("venue_edit")!!
-            binding.venueTitle.setText(venue.name)
-            binding.venueDescription.setText(venue.description)
-            binding.venueContact.setText(venue.contact)
-            text
-            binding.venueRating.rating
-            binding.btnAddVenue.setText(R.string.save_venue)
-            Picasso.get()
-                .load(venue.image)
-                .into(binding.venueImage)
-            if (venue.image != Uri.EMPTY) {
-                binding.btnAddImage.setText(R.string.change_venue_image)
-            }
-        }
-
-        binding.btnAddVenue.setOnClickListener() {
-            venue.name = binding.venueTitle.text.toString()
-            venue.description = binding.venueDescription.text.toString()
-            venue.contact = binding.venueContact.text.toString()
-            venue.type = text
-            venue.rating = binding.venueRating.rating.toDouble()
-            if (venue.name.isEmpty() && venue.description.isEmpty() && venue.contact.isEmpty() &&
-                venue.type.isEmpty() && venue.rating.isNaN()) {
-                Snackbar.make(it,R.string.enter_all_venue_details, Snackbar.LENGTH_LONG)
-                    .show()
-            } else {
-                if (edit) {
-                    app.venues.update(venue.copy())
-                } else {
-                    app.venues.create(venue.copy())
-                }
-            }
-            i("add Button Pressed: $venue")
-            setResult(RESULT_OK)
-            finish()
-        }
     }
 }

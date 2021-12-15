@@ -88,6 +88,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:ems="10"
+                    android:entries="@array/venue_type"
                     android:hint="@string/hint_venueType"
                     android:inputType="text"
                     android:minHeight="48dp"

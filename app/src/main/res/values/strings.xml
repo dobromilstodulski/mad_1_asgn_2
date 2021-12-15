@@ -30,7 +30,7 @@
     <string name="button_event_add">Add Event</string>
 
     <!-- Venue Activity -->
-    <string-array name="type">
+    <string-array name="venue_type">
         <item>Bar</item>
         <item>Nightclub</item>
         <item>Hall</item>
