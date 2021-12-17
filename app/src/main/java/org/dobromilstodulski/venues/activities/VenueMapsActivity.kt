@@ -39,14 +39,19 @@ class VenueMapsActivity : AppCompatActivity(), GoogleMap.OnMarkerClickListener {
         map.uiSettings.setZoomControlsEnabled(true)
         app.venues.findAll().forEach {
             val loc = LatLng(it.lat, it.lng)
-            val options = MarkerOptions().title(it.name).position(loc)
-            map.addMarker(options)?.tag = it.id
+            //val options = MarkerOptions().title(it.name).position(loc)
+            //map.addMarker(options)?.tag = it.id
+
+            map.addMarker(MarkerOptions()
+                .title(it.name).position(loc)
+                .snippet(it.description).position(loc))
             map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, it.zoom))
         }
     }
 
     override fun onMarkerClick(marker: Marker): Boolean {
         contentBinding.currentTitle.text = marker.title
+        contentBinding.currentDescription.text = marker.snippet
         return false
     }
 
