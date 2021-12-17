@@ -41,7 +41,7 @@ class VenueMapsActivity : AppCompatActivity(), GoogleMap.OnMarkerClickListener {
             val loc = LatLng(it.lat, it.lng)
             //val options = MarkerOptions().title(it.name).position(loc)
             //map.addMarker(options)?.tag = it.id
-
+            //https://stackoverflow.com/questions/40873209/custom-marker-options-in-google-map
             map.addMarker(MarkerOptions()
                 .title(it.name).position(loc)
                 .snippet(it.description).position(loc))

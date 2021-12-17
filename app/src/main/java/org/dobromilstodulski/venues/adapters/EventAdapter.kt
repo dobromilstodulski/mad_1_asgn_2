@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.ValueEventListener
 import org.dobromilstodulski.venues.databinding.CardEventBinding
 import org.dobromilstodulski.venues.models.EventModel
+import kotlin.time.Duration.Companion.days
 
 interface EventListener {
     fun onEventClick(event: EventModel)
@@ -73,7 +74,7 @@ class EventAdapter(private val events: ArrayList<EventModel>) : RecyclerView.Ada
             binding.eventTicket.text = event.ticket
             binding.eventType.text = event.type
             binding.eventTime.text = event.time
-            binding.eventDate.text = event.date
+            binding.eventDate.text = event.date.days.toString()
             binding.eventOrganiser.text = event.organiser
         }
     }

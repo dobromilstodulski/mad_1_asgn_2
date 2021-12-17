@@ -90,19 +90,10 @@
                     android:textSize="14sp"
                     tools:layout_editor_absoluteY="343dp" />
 
-                <EditText
+                <CalendarView
                     android:id="@+id/eventDate"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:ems="10"
-                    android:hint="@string/hint_eventDate"
-                    android:inputType="date"
-                    android:minHeight="48dp"
-                    android:padding="8dp"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp"
-                    tools:layout_editor_absoluteY="343dp" />
+                    android:layout_height="wrap_content" />
 
                 <EditText
                     android:id="@+id/eventOrganiser"

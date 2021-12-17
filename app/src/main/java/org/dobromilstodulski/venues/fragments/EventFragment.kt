@@ -8,8 +8,6 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import org.dobromilstodulski.venues.R
 import org.dobromilstodulski.venues.databinding.FragmentEventBinding
 import org.dobromilstodulski.venues.models.EventModel
@@ -34,10 +32,10 @@ class EventFragment : Fragment(R.layout.fragment_event) {
             var ticket = binding.eventTicket.text.toString()
             var type = binding.eventType.text.toString()
             var time = binding.eventTime.text.toString()
-            var date = binding.eventDate.text.toString()
+            var date = binding.eventDate.date
             var organiser = binding.eventOrganiser.text.toString()
             if (title.isNotEmpty() && description.isNotEmpty() && ticket.isNotEmpty() &&
-                type.isNotEmpty() && time.isNotEmpty() && date.isNotEmpty() &&
+                type.isNotEmpty() && time.isNotEmpty() && date.equals(0) &&
                 organiser.isNotEmpty())
             {
                 database = FirebaseDatabase.getInstance().getReference("events")
@@ -47,7 +45,7 @@ class EventFragment : Fragment(R.layout.fragment_event) {
                     binding.eventDescription.text.clear()
                     binding.eventTicket.text.clear()
                     binding.eventTime.text.clear()
-                    binding.eventDate.text.clear()
+                    //binding.eventDate.text.clear()
                     binding.eventOrganiser.text.clear()
 
                     Toast.makeText(activity,"Successfully Saved!",Toast.LENGTH_SHORT).show()
