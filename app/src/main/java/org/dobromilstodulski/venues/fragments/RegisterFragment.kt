@@ -19,6 +19,7 @@ import org.dobromilstodulski.venues.activities.*
 import org.dobromilstodulski.venues.databinding.FragmentRegisterBinding
 import timber.log.Timber
 
+//https://firebase.google.com/docs/auth/android/start
 class RegisterFragment : Fragment(R.layout.fragment_register) {
 
     private var _binding: FragmentRegisterBinding? = null
