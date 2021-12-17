@@ -32,10 +32,10 @@ class EventFragment : Fragment(R.layout.fragment_event) {
             var ticket = binding.eventTicket.text.toString()
             var type = binding.eventType.text.toString()
             var time = binding.eventTime.text.toString()
-            var date = binding.eventDate.date
+            var date = binding.eventDate.text.toString()
             var organiser = binding.eventOrganiser.text.toString()
             if (title.isNotEmpty() && description.isNotEmpty() && ticket.isNotEmpty() &&
-                type.isNotEmpty() && time.isNotEmpty() && date.equals(0) &&
+                type.isNotEmpty() && time.isNotEmpty() && date.isNotEmpty() &&
                 organiser.isNotEmpty())
             {
                 database = FirebaseDatabase.getInstance().getReference("events")
@@ -45,7 +45,7 @@ class EventFragment : Fragment(R.layout.fragment_event) {
                     binding.eventDescription.text.clear()
                     binding.eventTicket.text.clear()
                     binding.eventTime.text.clear()
-                    //binding.eventDate.text.clear()
+                    binding.eventDate.text.clear()
                     binding.eventOrganiser.text.clear()
 
                     Toast.makeText(activity,"Successfully Saved!",Toast.LENGTH_SHORT).show()

@@ -6,5 +6,5 @@ class EventModel(
     var ticket: String="",
     var type: String="",
     var time: String="",
-    var date: Long,
+    var date: String="",
     var organiser: String="",)

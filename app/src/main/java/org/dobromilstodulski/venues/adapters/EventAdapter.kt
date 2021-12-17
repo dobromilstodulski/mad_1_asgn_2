@@ -74,7 +74,7 @@ class EventAdapter(private val events: ArrayList<EventModel>) : RecyclerView.Ada
             binding.eventTicket.text = event.ticket
             binding.eventType.text = event.type
             binding.eventTime.text = event.time
-            binding.eventDate.text = event.date.days.toString()
+            binding.eventDate.text = event.date
             binding.eventOrganiser.text = event.organiser
         }
     }
