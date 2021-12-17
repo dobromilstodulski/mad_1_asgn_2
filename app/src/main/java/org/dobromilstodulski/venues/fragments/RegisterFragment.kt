@@ -16,10 +16,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import org.dobromilstodulski.venues.R
 import org.dobromilstodulski.venues.activities.*
-import org.dobromilstodulski.venues.databinding.ActivityLoginBinding
-import org.dobromilstodulski.venues.databinding.FragmentLoginBinding
 import org.dobromilstodulski.venues.databinding.FragmentRegisterBinding
-import org.dobromilstodulski.venues.fragments.RegisterFragment.Companion.TAG
 import timber.log.Timber
 
 class RegisterFragment : Fragment(R.layout.fragment_register) {
