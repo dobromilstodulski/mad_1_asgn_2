@@ -93,7 +93,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
             Toast.makeText(activity, "Sign In Successful", Toast.LENGTH_LONG).show()
-            startActivity(Intent(activity, EventActivity::class.java))
+            startActivity(Intent(activity, MenuActivity::class.java))
         } else {
             Toast.makeText(requireActivity(), "Sign In Unsuccessful", Toast.LENGTH_LONG).show()
         }
