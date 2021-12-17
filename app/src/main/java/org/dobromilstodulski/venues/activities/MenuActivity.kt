@@ -31,11 +31,6 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnPlaces.setOnClickListener{
-            val intent = Intent(this, PlacesActivity::class.java)
-            startActivity(intent)
-        }
-
         binding.btnEB.setOnClickListener{
             val intent = Intent(this, EventEventbriteActivity::class.java)
             startActivity(intent)
