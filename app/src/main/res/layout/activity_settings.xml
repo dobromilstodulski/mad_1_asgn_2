@@ -48,7 +48,7 @@
                     android:paddingTop="8dp"
                     android:paddingBottom="8dp"
                     android:stateListAnimator="@null"
-                    android:text="@string/button_events"
+                    android:text="@string/button_choose_theme"
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp"
                     tools:layout_editor_absoluteY="536dp" />
