@@ -57,5 +57,7 @@
 
     <string name="dark_mode">Enable Dark Mode</string>
 
+    <string name="choose_theme">Choose Theme</string>
+
     <string name="title_activity_map">MapActivity</string>
 </resources>

@@ -2,6 +2,7 @@ package org.dobromilstodulski.venues.activities
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import org.dobromilstodulski.venues.R
@@ -23,17 +24,36 @@ class SettingsActivity : AppCompatActivity() {
 
         app = application as MainApp
 
-       binding.switch1.setOnCheckedChangeListener { _, isChecked ->
+        binding.btnTheme.setOnClickListener{chooseTheme()}
+    }
 
-           // if the button is checked, i.e., towards the right or enabled
-           // enable dark mode, change the text to disable dark mode
-           // else keep the switch text to enable dark mode
-           if (isChecked) {
-               AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-               binding.switch1.text = "Disable dark mode"
-           } else {
-               AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-               binding.switch1.text = "Enable dark mode"
-           }}
+    private fun chooseTheme() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(getString(R.string.choose_theme))
+        val styles = arrayOf("Light","Dark","System default")
+        val checkedItem = 0
+
+        builder.setSingleChoiceItems(styles, checkedItem) { dialog, which ->
+            when (which) {
+                0 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    delegate.applyDayNight()
+                    dialog.dismiss()
+                }
+                1 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    delegate.applyDayNight()
+                    dialog.dismiss()
+                }
+                2 -> {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                    delegate.applyDayNight()
+                    dialog.dismiss()
+                }
+            }
+        }
+
+        val dialog = builder.create()
+        dialog.show()
     }
 }
