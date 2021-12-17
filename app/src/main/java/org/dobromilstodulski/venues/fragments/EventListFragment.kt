@@ -57,6 +57,7 @@ class EventListFragment : Fragment(R.layout.fragment_event_list) {
     }
     */
 
+    //https://www.youtube.com/watch?v=jOgYxNM2BgQ&t=648s
     private fun getEventData() {
 
         reference = FirebaseDatabase.getInstance().getReference("events")

@@ -25,6 +25,7 @@ class EventFragment : Fragment(R.layout.fragment_event) {
         return binding.root
     }
 
+    //https://github.com/foxandroid/RealtimedatabaseKotlin/blob/master/app/src/main/java/com/example/realtimedatabasekotlin/MainActivity.kt
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnAddEvent.setOnClickListener() {
             var title = binding.eventTitle.text.toString()

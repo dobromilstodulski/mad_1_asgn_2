@@ -1,12 +1,10 @@
 package org.dobromilstodulski.venues.activities
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import org.dobromilstodulski.venues.R
-import org.dobromilstodulski.venues.databinding.ActivityMenuBinding
 import org.dobromilstodulski.venues.databinding.ActivitySettingsBinding
 import org.dobromilstodulski.venues.main.MainApp
 
@@ -27,6 +25,7 @@ class SettingsActivity : AppCompatActivity() {
         binding.btnTheme.setOnClickListener{chooseTheme()}
     }
 
+    //https://proandroiddev.com/dark-mode-on-android-app-with-kotlin-dc759fc5f0e1
     private fun chooseTheme() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.choose_theme))
