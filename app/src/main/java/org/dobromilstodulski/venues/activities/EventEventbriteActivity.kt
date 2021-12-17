@@ -22,6 +22,7 @@ class EventEventbriteActivity : AppCompatActivity() {
 
         app = application as MainApp
 
+        //https://developer.android.com/guide/webapps/webview
         binding.webview.settings.javaScriptEnabled = true
         binding.webview.loadUrl("https://www.eventbrite.ie/d/ireland/events/")
     }
