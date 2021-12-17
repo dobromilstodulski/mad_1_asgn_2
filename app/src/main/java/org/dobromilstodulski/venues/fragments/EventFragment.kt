@@ -45,6 +45,7 @@ class EventFragment : Fragment(R.layout.fragment_event) {
                     binding.eventTitle.text.clear()
                     binding.eventDescription.text.clear()
                     binding.eventTicket.text.clear()
+                    binding.eventType.text.clear()
                     binding.eventTime.text.clear()
                     binding.eventDate.text.clear()
                     binding.eventOrganiser.text.clear()
